@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  php:
+    container_name: "test_task_php_unit_tests"
+    build: docker/php_unit_tests
+    tty: true
+    volumes:
+      - ./docker/php/z-overrides.ini:/usr/local/etc/php/conf.d/z-overrides.ini
+      - ./:/app
+    working_dir: /app
